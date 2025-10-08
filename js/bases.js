@@ -90,3 +90,103 @@ const tasse = {
     content_volume: 25
 }
 
+const eleve = {
+    name: "Jean-Michel",
+    age: 18,
+    class: "Terminale",
+    notes: [13, 18, 19, 2, 16, 15.5]
+}
+
+console.log(eleve.name);
+// Calcul de la moyenne de Jean-Michel, en codage naif
+let moyenne = (eleve.notes[0] + eleve.notes[1] + eleve.notes[2] + eleve.notes[3] + eleve.notes[4] + eleve.notes[5]) / 6;
+console.log(moyenne);
+
+// OPERATEUR
+
+// L'affectation
+// On donne la valeur de 7 à la variable aa
+let aa = 7;
+
+// l'addition
+// La valeur 7 est remplacée par 12 + 4 (16)
+aa = 12 + 4;
+
+console.log(aa); // donne 16
+
+// L'affectation après addition
+// Avec cette écriture on n'écrase pas la valeur mais on ajoute 4 à l'ancienne valeur
+aa += 4;
+console.log(aa); // donne 20
+
+// la soustraction
+let bb = 20 - 4;
+console.log(bb);
+
+// L'affectation après soustraction
+bb -= 4;
+console.log(bb);
+
+// La multiplication
+let cc = 5 * 8;
+console.log(cc);
+
+// L'affectation après multiplication
+
+cc *= 2;
+console.log(cc);
+
+// La division
+
+let dd = 20 / 4;
+console.log(dd);
+
+bb /= 2;
+console.log(dd);
+
+// Le modulo
+let ee = 13 % 5;
+console.log(ee);
+
+// exponential
+
+let ff = 3 ** 2;
+console.log(ff);
+
+// Les conditions
+
+let gg = 4;
+let hh = 4;
+let ii = 9;
+
+if (gg == hh) {
+    // si la condition est remplie
+} else {
+    // si la condition n'est pas remplie
+}
+
+// égalité non stricte
+if (6 == "6") {
+    console.log("ça marche");   
+}
+
+// égalité stricte, elle vérifie aussi le type
+// ici l'égalité est fausse car 6 est un number et "6" une string
+if (6 === "6") {
+    console.log("ça marche");
+} else {
+    console.log("ou pas");
+    
+}
+
+if (eleve.age >= 18) {
+    // ici on va faire la concaténation avec le nom de l'élève et un texte descriptif
+    console.log(eleve.name + " est bien majeur");
+    
+    console.log(`${eleve.name} est majeur`);
+    
+} else {
+    // ici concaténation de littéral de gabarit
+    console.log(`${eleve.name} n'est pas majeur`);
+    
+}

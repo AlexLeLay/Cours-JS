@@ -34,3 +34,17 @@ ul li a {
 ul li a:hover {
     color: wheat;
 }
+
+button {
+    border: none;
+    background: royalblue;
+    color: wheat;
+    padding: 1rem;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 1rem 0;
+}
+
+button:hover {
+    background: rgb(116, 142, 228);
+}

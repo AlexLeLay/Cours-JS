@@ -1,18 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <script src="js/bases.js" defer></script>
+    <link href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism-tomorrow.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
     <title>Les bases du langage JavaScript</title>
 </head>
+
 <body>
     <main>
         <h1>Les bases du langage JavaScript</h1>
         <h2>Les variables</h2>
         <p>Une variable est un espace mémoire qui stocke une valeur (un nombre, du texte, etc.)</p>
-        <p>En JS, on déclare une variable avec les mots-clés <b>let</b>, <b>const</b> et anciennement <i>var</i> (toujours utilisé dans du vieux code, à proscrire) voir examples dans bases.js</p>
+        <p>En JS, on déclare une variable avec les mots-clés <b>let</b>, <b>const</b> et anciennement <i>var</i>
+            (toujours utilisé dans du vieux code, à proscrire) voir examples dans bases.js</p>
+
+        <h2>Les boucles</h2>
+        <p>Une <b>boucle</b> est une structure qui permet de <b>répéter</b> un bloc de code tant qu'une condition est
+            vraie</p>
+        <p>C'est une façon automatique de répéter des instructions sans devoir les écrire plusieurs fois</p>
+        <h3>Les types de boucles</h3>
+        <ul>
+            <li>La boucle While</li>
+            <li>La boucle Do... While</li>
+            <li>La boucle For</li>
+            <li>La boucle For...of</li>
+            <li>La boucle For...in</li>
+        </ul>
+        <h3>La boucle while</h3>
+        <p>On l'utilise quand on ne connait pas forcément à l'avance le nombre de tours</p>
+        <pre class="line-numbers">
+            <code class="language-javascript">
+                // condition > cette condition doit être vraie pour pouvoir continuer
+                // (comme le if, cependant ne jamais mettre de "==" ou "===")
+                while (condition) {
+                   // code à exectuer
+                }
+            </code>
+        </pre>
+        <p>Exemple concret</p>
+        <pre class="line-numbers">
+            <code class="language-javascript">
+                let n = 0;
+                while (n < 6) {
+                    console.log(n + " * 5 est égale à " + n * 5);
+                    n++;
+                }
+            </code>
+        </pre>
+
+        <h3>La boucle do...while</h3>
+        <p>C'est comme la boucle while, mais elle s'execute au moins une fois avant de tester la condition</p>
+        <pre class="line-numbers">
+            <code class="language-javascript">
+                do {
+                    // code
+                } while (condition);
+            </code>
+        </pre>
+        <p>Exemple concret</p>
+        <pre class="line-numbers">
+            <code class="language-javascript">
+                let nbr;
+                let nbr_throw = 0;
+                do {
+                    nbr = Math.floor((Math.random() * 6)) + 1;
+                    console.log(`Résultat du dé : ${nbr}`);
+                    nbr_throw++;
+                } while (nbr !== 6)
+            </code>
+        </pre>
+
+        <h3>La boucle for</h3>
+        <p>La plus classique quand on connait à l'avance le nombre de répétitions</p>
+        <pre class="line-numbers">
+            <code class="language-javascript">
+                for(initialisation; condition; incrémentation) {
+                    // code
+                }
+            </code>
+        </pre>
+        <p>Exemple concret</p>
+        <pre class="line-numbers">
+            <code class="language-javascript">
+                for (let i = 0; i < 5; i++) {
+                    console.log(`Compteur Lecornu : ${i}`);
+                }
+            </code>
+        </pre>
+        <p>Une boucle for permet de <b>traverser</b> un tableau à partir de ses indexs</p>
+        <pre class="line-numbers">
+            <code class="language-javascript">
+                let voitures = ["Dacia", "Lada", "Audi", "Daihatsu", "Toyota", "Chevrolet"];
+
+                for (let i = 0; i < voitures.length; i++) {
+                    console.log(voitures[i]);
+                    
+                }   
+            </code>
+        </pre>
+        <h3>La boucle for...of</h3>
+        <div id="container"></div>
     </main>
 </body>
+
 </html>

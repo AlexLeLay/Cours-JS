@@ -48,3 +48,7 @@ button {
 button:hover {
     background: rgb(116, 142, 228);
 }
+
+#container li::first-letter {
+    color: red;
+}

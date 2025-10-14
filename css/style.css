@@ -52,3 +52,7 @@ button:hover {
 #container li::first-letter {
     color: red;
 }
+
+.cyan {
+    color:#00ffff;
+}

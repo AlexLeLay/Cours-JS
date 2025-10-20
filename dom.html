@@ -5,9 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <script src="js/dom.js" defer></script>
+    <link href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism-tomorrow.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
     <title>Le DOM</title>
 </head>
-<body>
+<body style="height: 2000vh;">
     <main>
         <h1>Le DOM ou le Document Object Model</h1>
         <h2 id="title" aria-label="titre secondaire">C'est quoi le <b>DOM</b></h2>
@@ -32,6 +34,86 @@
                 </ul>
             </div>
         </div>
+        <h2>Récupérer une classe en JS</h2>
+        <ul class="list-pokemon">
+            <li class="pokemons">Alakazam</li>
+            <li class="pokemons">Leveinard</li>
+            <li class="pokemons">Dracofeu</li>
+            <li class="pokemons">Gardevoir</li>
+            <li class="pokemons">Mentali</li>
+        </ul>
+        <pre class="line-numbers">
+            <code class="language-javascript">
+                // Récupérer les classes
+
+                // Méthode déconseillée
+
+                // const pokemons = document.getElementsByClassName("pokemons");
+                // Methode standard
+
+                const pokemons = document.querySelectorAll(".pokemons");
+                console.log(pokemons);
+
+                // Si on sait qu'il n'y a qu'un seul élément d'une classe on peut utiliser :
+                // querySelector prendra uniquement le premier élément avec de nom de classe
+
+                const listPokemon = document.querySelector(".list-pokemon");
+                console.log(listPokemon);
+
+                const colorPokemon = ["#EBAE34","#F5B0D7","#D28953","#D2FAAC","#D7C5D9"];
+                for (let i = 0; i < colorPokemon.length; i++) {
+                    pokemons[i].style.color = colorPokemon[i];
+                }
+
+                // Ajouter une classe
+                // element.classList.add("class");
+                // Enlever une classe
+                // element.classList.remove("class");
+                // Basculer de class
+                // element.classList.toggle("class");
+            </code>
+        </pre>
+        <h2>SetTimeout() et SetInterval()</h2>
+        <h3>SetTimeout()</h3>
+        <p>ça execute une fonction une seule fois après un certain temps</p>
+        <pre class="line-numbers">
+            <code class="language-javascript">
+                setTimeout(function() {
+                    console.log("3 secondes se sont écoulées !");
+                }, 3000)
+            </code>
+        </pre>
+        <h3>SetInterval()</h3>
+        <p>Execute une fonction de manière répétée à intervalle régulier</p>
+        <pre class="line-numbers">
+            <code class="language-javascript">
+                setTimeout(function() {
+                    console.log("3 secondes se sont écoulées !");
+                }, 3000)
+            </code>
+        </pre>
+        <h2>clearTimeout() et clearInterval()</h2>
+        <h3>clearTimeout()</h3>
+        <p>Pour pouvoir supprimer vos timers, il faudra les mettre dans une variable</p>
+        <pre class="line-numbers">
+            <code class="language-javascript">
+                const timer = setTimeout(function() {
+                    console.log("3 secondes se sont écoulées !");
+                }, 3000)
+
+                clearTimeout(timer); // C'est plus intéressant dans un évènement
+
+                const interval = setInterval(function() {
+                    console.log("1 seconde vient de passer");
+                }, 1000)
+
+                clearInterval(interval)
+            </code>
+        </pre>
+
+    <hr>
+    <h2>EXO</h2>
+    <button id="btn-exo"></button>
     </main>
 </body>
 </html>

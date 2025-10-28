@@ -91,40 +91,90 @@ function max(array) {
 // que de cliquer sur le bouton.
 
 
-const btn = document.getElementById("btn");
-const list = document.getElementById("list");
-const input = document.getElementById("input");
-input.value = "";
-const textes = []
+// const btn = document.getElementById("btn");
+// const list = document.getElementById("list");
+// const input = document.getElementById("input");
+// input.value = "";
+// const textes = []
 
-function pushToArray() {
-    let texte = input.value;
-    textes.push(texte);
+// function pushToArray() {
+//     let texte = input.value;
+//     textes.push(texte);
+// }
+
+// function addToList() {
+//     list.innerHTML = "";
+//     console.log(textes);
+    
+//     for (let i = 0; i < textes.length; i++) {        
+//         const li = document.createElement("li");
+//         li.innerHTML = textes[i];
+//         list.appendChild(li);
+//     }
+// }
+
+// btn.addEventListener("click", function(){    
+//     pushToArray();
+//     addToList();
+//     input.value = "";
+// });
+
+// document.addEventListener("keydown", function(e) {
+//     console.count();
+    
+//     if (e.code === "Enter") {
+//         pushToArray();
+//         addToList();
+//         input.value = "";
+//     }
+// })
+
+// Fonctions fléchées
+
+// function add(nbrA, nbrB) {
+//     return nbrA + nbrB;
+// }
+
+let sum = (a, b) => a + b;
+console.log(sum(12,15)); // 27
+// Quand il n'y a qu'un paramètre, les parenthèses sont facultatives
+let double = a => a * 2;
+console.log(double(140)); // 280
+
+let calc = (a, b, c) => {
+    let d = a * b;
+    return d - c;
 }
 
-function addToList() {
-    list.innerHTML = "";
-    console.log(textes);
-    
-    for (let i = 0; i < textes.length; i++) {        
-        const li = document.createElement("li");
-        li.innerHTML = textes[i];
-        list.appendChild(li);
-    }
+console.log(calc(14,2,12)); // 16
+
+
+// autre exemple
+
+let maj = str => str.toUpperCase();
+
+console.log(maj("coucou"));
+
+// Problème avec this
+
+// exemple normal
+
+// function arrow() {
+//     document.addEventListener("click", function() {
+//         console.log(this);
+//     })
+// }
+
+let arrow = () => {
+    document.addEventListener("click", () => {
+        console.log(this);
+    })
 }
 
-btn.addEventListener("click", function(){    
-    pushToArray();
-    addToList();
-    input.value = "";
-});
+arrow();
 
-document.addEventListener("keydown", function(e) {
-    console.count();
-    
-    if (e.code === "Enter") {
-        pushToArray();
-        addToList();
-        input.value = "";
-    }
+const btnArrow = document.getElementById("btn-arrow");
+
+btnArrow.addEventListener("click", () => {
+    console.log(this);
 })

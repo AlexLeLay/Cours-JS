@@ -517,3 +517,83 @@ console.log(mot[3]);
 // Pour ajouter par exemple une majuscule au premier élément
 const mot2 = mot.charAt(0).toUpperCase() + mot.slice(1);
 console.log(mot2);
+
+
+// Méthodes itératrices
+
+// .forEach()
+
+const videoGames = ["Mario", "Pandemonium", "Gran Turismo", "Metal Gear", "Zelda", "Hollow Knight", "Rocket League"];
+const nbrIte = [5, 10, Math.PI, 19, 478, 255, 64712, 2.5, 47.899]
+
+// Écriture standard
+// videoGames.forEach(videoGame => {
+//     console.log(videoGame);
+// })
+
+videoGames.forEach((videoGame, index) => {
+    console.log(`Index ${index} : ${videoGame}`);
+})
+
+// .map()
+// Retourne un tableau après transformation de chaque élément
+
+const upper = videoGames.map(videoGame => videoGame.toUpperCase());
+console.log(upper);
+
+const pow2 = nbrIte.map(n => n ** 2);
+console.log(pow2);
+
+
+// .filter()
+// Retourne un tableau avec uniquement les éléments qui ont passé un test
+
+// On récupère dans un tableau uniquement les nombres pairs
+const even = nbrIte.filter(n => n % 2 === 0);
+console.log(even);
+
+// On récupère dans un tableau uniquement les noms des jeux qui commencent par un m
+const mGames = videoGames.filter(vg => vg.charAt(0).toLowerCase() === "m");
+console.log(mGames);
+
+// .reduce()
+// Il accumule une valeur à partir des éléments du tableau
+
+const prices = [10, 15.75, 78, 12];
+const totalPrice = prices.reduce((acc, val) => acc + val, 0)
+console.log(totalPrice);
+
+// Au début acc = 0
+// acc + val = 10
+// 10 + 15.75
+// 25.75 + 78
+// 103.75 + 12
+// 115.75
+
+// .find()
+// Retourne le *PREMIER* élément qui passe un test
+
+const users = [
+    {id: 1, nom: "Jean-Michel"},
+    {id: 2, nom: "Jean-Marcel"},
+    {id: 3, nom: "Jean-Marc"},
+    {id: 4, nom: "Jean-Eude"},
+    {id: 5, nom: "Jean-Kévin"}
+]
+
+// Je veux récupérer le premier élément d'id 4
+
+const user = users.find(u => u.id === 4);
+console.log(user);
+
+
+// .some() et .every()
+// .some() vérifié qu'au moins un des éléments du tableau satisfait la condition
+// .every() vérifié que tous les éléments satisfont la condition
+
+const nbrSome = [1, 5, 4, 74, 52356];
+const strEvery = ["Autruche", "Ane", "Anguille", "Alligator"];
+
+console.log(nbrSome.some(n => n % 2 === 0));
+console.log(nbrSome.every(n => n % 2 === 0));
+console.log(strEvery.every(s => s.charAt(0).toLowerCase() === "a"));

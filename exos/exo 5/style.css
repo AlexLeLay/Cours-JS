@@ -1,0 +1,69 @@
+@font-face {
+    font-family: "alarm";
+    src: url("alarmclock.ttf");
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "alarm";
+}
+
+body {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: black;
+    color: red;
+
+    gap: 2rem;
+}
+
+.hidden {
+    display: none;
+}
+
+.show {
+    display: inline;
+}
+
+#clock, #timer {
+    font-size: 2rem;
+    user-select: none;
+}
+
+#timer > span:hover {
+    color: green;
+}
+
+button {
+    background: unset;
+    border: 1px solid red;
+    padding: 0.5rem 1rem;
+    color: red;
+    border-radius: 10px;
+    font-size: 1rem;
+}
+
+button:hover {
+    background: rgb(70, 0, 0);
+    cursor: pointer;
+}
+
+#alert {
+    animation: show 1s infinite;
+}
+
+@keyframes show {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+        font-size: 2rem;
+    }
+}

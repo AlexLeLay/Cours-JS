@@ -18,6 +18,7 @@ body {
     justify-content: center;
 }
 
+
 ul, ol {
     margin-left: 2rem;
 }
@@ -55,4 +56,29 @@ button:hover {
 
 .cyan {
     color:#00ffff;
+}
+
+.img-api {
+    width: 50%;
+    text-align: center;
+}
+
+.img-api img{
+    max-width: 100%;
+}
+
+#huge-list li::first-letter {
+    text-transform: uppercase;
+    color: #00ffff;
+}
+
+#aled {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    align-items: center;
+}
+
+#aled img {
+    max-width: 50%;
 }

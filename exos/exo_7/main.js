@@ -23,11 +23,11 @@ checkboxes.forEach(checkbox => {
 })
 
 function checkFlags() {
-    checkboxes.forEach(checkbox => {
+    checkboxes.forEach((checkbox, index) => {
         if (checkbox.checked) {
             flags.push(checkbox.name)
         } else {
-            
+            flags.splice(index, 1);
         }
     })    
 }
